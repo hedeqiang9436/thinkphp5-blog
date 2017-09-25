@@ -1,0 +1,44 @@
+{extend name='admin_common'}
+{block name='title'}
+标签编辑
+{/block}
+
+{block name='content'}
+<div class="row">
+    <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
+        <div class="widget am-cf">
+            <div class="widget-head am-cf">
+                <div class="widget-title am-fl">标签编辑</div>
+                <div class="widget-function am-fr">
+                    <a href="javascript:;" class="am-icon-cog"></a>
+                </div>
+            </div>
+            <div class="widget-body am-fr">
+
+                <form class="am-form tpl-form-border-form tpl-form-border-br" method="post">
+                    <input type="hidden" name="tag_id" value="{$oldData['tag_id']}">
+                    <div class="am-form-group">
+                        <div class="am-u-sm-10">
+                            <label for="tag_name" class="am-u-sm-1 am-form-label">标签名称 </label>
+                            <div class="am-u-sm-3 am-u-sm-pull-8">
+                                <input type="text" name="tag_name" value="{$oldData['tag_name']}" class="tpl-form-input" id="tag_name" placeholder="请输入标签名称">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="am-form-group">
+                        <div class="am-u-sm-10">
+                            <div class="am-u-sm-1"></div>
+                            <div class="am-u-sm-3 am-u-sm-pull-8">
+                                <button type="submit" class="am-btn am-btn-primary am-btn-block tpl-btn-bg-color-success ">提交</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{/block}

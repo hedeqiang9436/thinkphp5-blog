@@ -1,0 +1,21 @@
+{extend name='common'}
+
+{block name='content'}
+    {foreach name='articles' item='vo'}
+         <article class="am-g blog-entry-article">
+        <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-img">
+            <img src="{$vo['art_thumb']}" alt="" class="am-u-sm-12">
+        </div>
+        <div class="am-u-lg-6 am-u-md-12 am-u-sm-12 blog-entry-text">
+            <span> @{$vo['art_author']} &nbsp;</span>
+            <span>{:date('Y-m-d',$vo['art_create_at'])}</span>
+            <h1><a href="{:url('article',['art_id'=>$vo['art_id']])}">{$vo['art_title']}</a></h1>
+            <div style=" width: 100%; overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">我们一直在坚持着，不是为了改变这个世界，而是希望不被这个世界所改变。</div>
+            <p><a href="" class="blog-continue">continue reading</a></p>
+        </div>
+    </article>
+    {/foreach}
+    <ul class="am-pagination am-fr">
+        {$articles->render()}
+    </ul>
+{/block}
